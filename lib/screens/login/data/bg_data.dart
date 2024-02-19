@@ -1,4 +1,4 @@
-List<String> bgList = [
+List<String> bgImageList = [
   "assets/login/bg1.jpeg",
   "assets/login/bg2.jpeg",
   "assets/login/bg3.jpeg",

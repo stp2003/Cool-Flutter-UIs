@@ -2,21 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-class ShowUpAnimation extends StatefulWidget {
+class ListAnimation extends StatefulWidget {
   final Widget child;
   final int? delay;
 
-  const ShowUpAnimation({
+  const ListAnimation({
     super.key,
     required this.child,
     this.delay,
   });
 
   @override
-  State<ShowUpAnimation> createState() => _ShowUpAnimationState();
+  State<ListAnimation> createState() => _ListAnimationState();
 }
 
-class _ShowUpAnimationState extends State<ShowUpAnimation>
+class _ListAnimationState extends State<ListAnimation>
     with TickerProviderStateMixin {
   late AnimationController _animController;
 

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class TextUtil extends StatelessWidget {
+class TextUtils extends StatelessWidget {
   final String text;
   final Color? color;
   final double? size;
   final bool? weight;
 
-  const TextUtil({
+  const TextUtils({
     super.key,
     required this.text,
     this.size,

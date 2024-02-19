@@ -6,14 +6,14 @@ import '../data/bg_data.dart';
 import '../utils/animations.dart';
 import '../utils/text_utils.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginViewState extends State<LoginView> {
   int selectedIndex = 0;
   bool showOption = false;
   bool checkTheBox = false;
@@ -37,12 +37,12 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Expanded(
               child: showOption
-                  ? ShowUpAnimation(
+                  ? ListAnimation(
                       delay: 100,
                       child: ListView.builder(
                         padding: const EdgeInsets.only(left: 20),
                         shrinkWrap: true,
-                        itemCount: bgList.length,
+                        itemCount: bgImageList.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           return GestureDetector(
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: CircleAvatar(
                                   radius: 30,
                                   backgroundImage: AssetImage(
-                                    bgList[index],
+                                    bgImageList[index],
                                   ),
                                 ),
                               ),
@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: CircleAvatar(
                           radius: 30,
                           backgroundImage: AssetImage(
-                            bgList[selectedIndex],
+                            bgImageList[selectedIndex],
                           ),
                         ),
                       ),
@@ -119,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(bgList[selectedIndex]),
+            image: AssetImage(bgImageList[selectedIndex]),
             fit: BoxFit.fill,
           ),
         ),
@@ -144,14 +144,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     const Spacer(),
                     const Center(
-                      child: TextUtil(
+                      child: TextUtils(
                         text: "Login",
                         weight: true,
                         size: 30,
                       ),
                     ),
                     const Spacer(),
-                    const TextUtil(text: "Email"),
+                    const TextUtils(text: "Email"),
                     Container(
                       height: 35,
                       decoration: const BoxDecoration(
@@ -172,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const Spacer(),
-                    const TextUtil(text: "Password"),
+                    const TextUtils(text: "Password"),
                     Container(
                       height: 35,
                       decoration: const BoxDecoration(
@@ -203,7 +203,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
                         const Expanded(
-                          child: TextUtil(
+                          child: TextUtils(
                             text: "Remember Me",
                             size: 12,
                             weight: true,
@@ -211,7 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(width: 15.0),
                         const Expanded(
-                          child: TextUtil(
+                          child: TextUtils(
                             text: "Forget Password",
                             size: 12,
                             weight: true,
@@ -228,7 +228,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       alignment: Alignment.center,
-                      child: const TextUtil(
+                      child: const TextUtils(
                         text: "Log In",
                         color: Colors.black,
                       ),
@@ -238,13 +238,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          TextUtil(
+                          TextUtils(
                             text: "Don't have a account?",
                             size: 12,
                             weight: true,
                           ),
                           SizedBox(width: 30.0),
-                          TextUtil(
+                          TextUtils(
                             text: "Register",
                             size: 15.0,
                             weight: true,
