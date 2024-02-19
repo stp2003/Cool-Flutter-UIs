@@ -22,6 +22,7 @@ class TextUtil extends StatelessWidget {
         color: color ?? Colors.white,
         fontSize: size ?? 16,
         fontWeight: weight == null ? FontWeight.w600 : FontWeight.w700,
+        letterSpacing: 0.5,
       ),
     );
   }

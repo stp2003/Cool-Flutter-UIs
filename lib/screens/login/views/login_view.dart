@@ -16,7 +16,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   int selectedIndex = 0;
   bool showOption = false;
-
   bool checkTheBox = false;
 
   check() {
@@ -152,9 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const Spacer(),
-                    const TextUtil(
-                      text: "Email",
-                    ),
+                    const TextUtil(text: "Email"),
                     Container(
                       height: 35,
                       decoration: const BoxDecoration(
@@ -238,10 +235,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const Spacer(),
                     const Center(
-                      child: TextUtil(
-                        text: "Don't have a account REGISTER",
-                        size: 12,
-                        weight: true,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TextUtil(
+                            text: "Don't have a account?",
+                            size: 12,
+                            weight: true,
+                          ),
+                          SizedBox(width: 30.0),
+                          TextUtil(
+                            text: "Register",
+                            size: 15.0,
+                            weight: true,
+                          ),
+                        ],
                       ),
                     ),
                     const Spacer(),
