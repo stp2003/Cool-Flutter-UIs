@@ -17,6 +17,16 @@ class _LoginScreenState extends State<LoginScreen> {
   int selectedIndex = 0;
   bool showOption = false;
 
+  bool checkTheBox = false;
+
+  check() {
+    setState(
+      () {
+        checkTheBox = !checkTheBox;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ? ShowUpAnimation(
                       delay: 100,
                       child: ListView.builder(
+                        padding: const EdgeInsets.only(left: 20),
                         shrinkWrap: true,
                         itemCount: bgList.length,
                         scrollDirection: Axis.horizontal,
@@ -187,15 +198,24 @@ class _LoginScreenState extends State<LoginScreen> {
                     const Spacer(),
                     Row(
                       children: [
-                        Container(
-                          height: 15,
-                          width: 15,
-                          color: Colors.white,
+                        Checkbox(
+                          checkColor: Colors.white,
+                          value: checkTheBox ? true : false,
+                          onChanged: (value) {
+                            check();
+                          },
                         ),
-                        const SizedBox(width: 10),
                         const Expanded(
                           child: TextUtil(
-                            text: "Remember Me , FORGET PASSWORD",
+                            text: "Remember Me",
+                            size: 12,
+                            weight: true,
+                          ),
+                        ),
+                        const SizedBox(width: 15.0),
+                        const Expanded(
+                          child: TextUtil(
+                            text: "Forget Password",
                             size: 12,
                             weight: true,
                           ),
